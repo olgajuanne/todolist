@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.olganunes.todolist.utils.Utils;
+
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
@@ -59,7 +61,7 @@ public class TaskController {
         var task = this.taskRepository.findById(id);
         
         taskModel.setIdUser((UUID) idUser);
-        taskModel.setId(id);
+        taskModel.setId(id);  
         return this.taskRepository.save(taskModel);
     }
   
